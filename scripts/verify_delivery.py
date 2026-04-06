@@ -60,7 +60,7 @@ def raise_dispute(execution_id, token, reason, proof_hash):
     """
     Private helper to trigger the Dealclaw dispute API.
     """
-    api_url = os.environ.get("DEALCLAW_API_BASE", "https://api.dealclaw.net")
+    api_url = os.environ.get("DEALCLAW_API_URL", "https://api.dealclaw.net")
     url = f"{api_url}/api/executions/{execution_id}/dispute"
     
     headers = {
@@ -85,7 +85,7 @@ def raise_dispute(execution_id, token, reason, proof_hash):
 
 if __name__ == "__main__":
     if len(sys.argv) < 5:
-        print("Usage: python verify_delivery.py <execution_id> <payload_url> <expected_hash> <DEALCLAW_TOKEN> [output_schema_json]")
+        print("Usage: python verify_delivery.py <execution_id> <payload_url> <expected_hash> <DEALCLAW_SHARED_PAYMENT_TOKEN> [output_schema_json]")
         sys.exit(1)
 
     exec_id = sys.argv[1]

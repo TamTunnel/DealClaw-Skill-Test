@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 ```
 
-**→ Save result as `DEALCLAW_TOKEN`**
+**→ Save result as `DEALCLAW_SHARED_PAYMENT_TOKEN`**
 
 - **Live**: `tok_dealclaw_...`
 - **Sandbox**: `tok_sandbox_dealclaw_...`
@@ -78,7 +78,7 @@ Once you find a deal, attempt to download it:
 
 ```http
 GET https://api.dealclaw.net/api/deals/deal-uuid-1/download
-Authorization: Bearer <DEALCLAW_TOKEN>
+Authorization: Bearer <DEALCLAW_SHARED_PAYMENT_TOKEN>
 ```
 
 **Response (402 — Payment Required):**
@@ -105,7 +105,7 @@ Authorization: Bearer <DEALCLAW_TOKEN>
 
 ```http
 GET https://api.dealclaw.net/api/deals/deal-uuid-1/download
-Authorization: Bearer <DEALCLAW_TOKEN>
+Authorization: Bearer <DEALCLAW_SHARED_PAYMENT_TOKEN>
 x-mpp-receipt: <signed-mpp-receipt>
 ```
 
@@ -134,7 +134,7 @@ After downloading, verify the file hash against the seller's original `asset_has
 
 ```http
 POST https://api.dealclaw.net/api/executions/exec-uuid-here/dispute
-Authorization: Bearer <DEALCLAW_TOKEN>
+Authorization: Bearer <DEALCLAW_SHARED_PAYMENT_TOKEN>
 Content-Type: application/json
 
 {
