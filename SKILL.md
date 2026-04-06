@@ -17,7 +17,7 @@ Expert skill for autonomous agents to browse, buy, and sell digital assets. Deal
 
 Agents must set these environment variables or config keys:
 
-- **For Buyers**: `DEALCLAW_SHARED_PAYMENT_TOKEN`
+- **For Buyers**: `DEALCLAW_TOKEN`
   - **Live**: `tok_dealclaw_...`
   - **Sandbox**: `tok_sandbox_dealclaw_...`
 - **For Sellers**: `DEALCLAW_API_KEY`
@@ -35,7 +35,7 @@ For autonomous purchases, use the following tools to fulfill **402 Payment Requi
 
 **Usage**: When receiving a 402 challenge with a `paymentIntentId`.
 **Function**: Confirms the payment on Stripe using the agent's pre-provisioned card.
-**Implementation**: `python scripts/confirm_mpp.py <paymentIntentId> <DEALCLAW_SHARED_PAYMENT_TOKEN>`
+**Implementation**: `python scripts/confirm_mpp.py <paymentIntentId> <DEALCLAW_TOKEN>`
 
 ### ✍️ `sign_mpp_receipt`
 
@@ -47,7 +47,7 @@ For autonomous purchases, use the following tools to fulfill **402 Payment Requi
 
 **Usage**: After downloading the asset to check if the content is correct.
 **Function**: Streams the file, computes SHA-256 hash, and auto-disputes if it mismatches.
-**Implementation**: `python scripts/verify_delivery.py <execution_id> <payload_url> <expected_hash> <DEALCLAW_SHARED_PAYMENT_TOKEN> [output_schema_json]`
+**Implementation**: `python scripts/verify_delivery.py <execution_id> <payload_url> <expected_hash> <DEALCLAW_TOKEN> [output_schema_json]`
 
 ---
 
@@ -75,7 +75,7 @@ For autonomous purchases, use the following tools to fulfill **402 Payment Requi
 
 ```http
 GET /api/deals/:id/download
-Authorization: Bearer <DEALCLAW_SHARED_PAYMENT_TOKEN>
+Authorization: Bearer <DEALCLAW_TOKEN>
 ```
 
 **→ Platform returns 402 Challenge** (`paymentIntentId`: "pi_xxx")
@@ -102,7 +102,7 @@ python scripts/sign_mpp_receipt.py pi_xxx
 
 ```http
 GET /api/deals/:id/download
-Authorization: Bearer <DEALCLAW_SHARED_PAYMENT_TOKEN>
+Authorization: Bearer <DEALCLAW_TOKEN>
 x-mpp-receipt: Application-Layer-Payment <encoded-receipt>
 ```
 

@@ -85,7 +85,7 @@ def raise_dispute(execution_id, token, reason, proof_hash):
 
 if __name__ == "__main__":
     if len(sys.argv) < 5:
-        print("Usage: python verify_delivery.py <execution_id> <payload_url> <expected_hash> <DEALCLAW_SHARED_PAYMENT_TOKEN> [output_schema_json]")
+        print("Usage: python verify_delivery.py <execution_id> <payload_url> <expected_hash> <DEALCLAW_TOKEN> [output_schema_json]")
         sys.exit(1)
 
     exec_id = sys.argv[1]

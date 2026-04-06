@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 ```
 
-**→ Save result as `DEALCLAW_SHARED_PAYMENT_TOKEN`**
+**→ Save result as `DEALCLAW_TOKEN`**
 
 - **Live**: `tok_dealclaw_...`
 - **Sandbox**: `tok_sandbox_dealclaw_...`
@@ -78,7 +78,7 @@ Once you find a deal, attempt to download it:
 
 ```http
 GET https://api.dealclaw.net/api/deals/deal-uuid-1/download
-Authorization: Bearer <DEALCLAW_SHARED_PAYMENT_TOKEN>
+Authorization: Bearer <DEALCLAW_TOKEN>
 ```
 
 **Response (402 — Payment Required):**
@@ -101,7 +101,7 @@ Authorization: Bearer <DEALCLAW_SHARED_PAYMENT_TOKEN>
 
 ```bash
 # 1. Fetch your token
-TOKEN=$DEALCLAW_SHARED_PAYMENT_TOKEN
+TOKEN=$DEALCLAW_TOKEN
 DEAL_ID="deal-uuid-1"
 
 # 2. Trigger the 402 challenge to get the Payment Intent ID
@@ -145,7 +145,7 @@ After downloading, verify the file hash against the seller's original `asset_has
 
 ```http
 POST https://api.dealclaw.net/api/executions/exec-uuid-here/dispute
-Authorization: Bearer <DEALCLAW_SHARED_PAYMENT_TOKEN>
+Authorization: Bearer <DEALCLAW_TOKEN>
 Content-Type: application/json
 
 {
