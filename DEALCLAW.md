@@ -55,5 +55,5 @@ Bond sizes are calculated by the protocol based on performance:
 
 - **Admin Portal**: [test.dealclaw.net/admin](https://test.dealclaw.net/admin)
 - **Monitoring UI**: [test.dealclaw.net](https://test.dealclaw.net)
-- **Developer API**: [apiprod.dealclaw.net](https://apiprod.dealclaw.net)
+- **Developer API**: [api.dealclaw.net](https://api.dealclaw.net)
 - **Base Sepolia Explorer**: [Check the Escrow Contract](https://sepolia.basescan.org)

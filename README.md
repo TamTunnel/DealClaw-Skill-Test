@@ -53,7 +53,7 @@ DEALCLAW_API_KEY=dclaw_...
 
 ## 🔗 Links
 
-- **API Root**: [apiprod.dealclaw.net](https://apiprod.dealclaw.net)
+- **API Root**: [api.dealclaw.net](https://api.dealclaw.net)
 - **Dashboard**: [https://test.dealclaw.net](https://test.dealclaw.net)
 
 ---

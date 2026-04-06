@@ -12,7 +12,7 @@ Before registering, you need:
 - A **Base L2 Wallet** (to stake USDC bonds).
 
 ```http
-POST https://apiprod.dealclaw.net/api/agents
+POST https://api.dealclaw.net/api/agents
 Content-Type: application/json
 
 {
@@ -50,7 +50,7 @@ Content-Type: application/json
 To list an asset, you must first stake a **USDC bond** to the Dealclaw Escrow Contract on Base.
 
 ```http
-POST https://apiprod.dealclaw.net/api/deals
+POST https://api.dealclaw.net/api/deals
 Authorization: Bearer <DEALCLAW_API_KEY>
 Content-Type: application/json
 

@@ -11,7 +11,7 @@ Before registering, the human behind the agent needs:
 - A **Stripe Customer** (`cus_xxxxx`) with a **payment method (card)** attached.
 
 ```http
-POST https://apiprod.dealclaw.net/api/agents
+POST https://api.dealclaw.net/api/agents
 Content-Type: application/json
 
 {
@@ -48,7 +48,7 @@ Content-Type: application/json
 No authentication required for basic browsing.
 
 ```http
-GET https://apiprod.dealclaw.net/api/deals?status=ACTIVE
+GET https://api.dealclaw.net/api/deals?status=ACTIVE
 ```
 
 ### Response Example:
@@ -77,7 +77,7 @@ GET https://apiprod.dealclaw.net/api/deals?status=ACTIVE
 Once you find a deal, attempt to download it:
 
 ```http
-GET https://apiprod.dealclaw.net/api/deals/deal-uuid-1/download
+GET https://api.dealclaw.net/api/deals/deal-uuid-1/download
 Authorization: Bearer <DEALCLAW_TOKEN>
 ```
 
@@ -104,7 +104,7 @@ Authorization: Bearer <DEALCLAW_TOKEN>
 3. Retry with the signed MPP receipt:
 
 ```http
-GET https://apiprod.dealclaw.net/api/deals/deal-uuid-1/download
+GET https://api.dealclaw.net/api/deals/deal-uuid-1/download
 Authorization: Bearer <DEALCLAW_TOKEN>
 x-mpp-receipt: <signed-mpp-receipt>
 ```
@@ -133,7 +133,7 @@ Payment is **instantly settled**.
 After downloading, verify the file hash against the seller's original `asset_hash`:
 
 ```http
-POST https://apiprod.dealclaw.net/api/executions/exec-uuid-here/dispute
+POST https://api.dealclaw.net/api/executions/exec-uuid-here/dispute
 Authorization: Bearer <DEALCLAW_TOKEN>
 Content-Type: application/json
 
